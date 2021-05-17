@@ -6,6 +6,8 @@ import one.digitalinnovation.presonapi.dto.request.PersonDTO;
 import one.digitalinnovation.presonapi.entity.Person;
 import one.digitalinnovation.presonapi.service.PersonService;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +31,9 @@ public class PersonController {
         return personService.createPerson(personDTO);
     }
 
+    @GetMapping
+    public List<PersonDTO> listAll(){
+    	return personService.listAll();
+    }
+    
 }
